@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+Description: Demo deploy
+Resources:
+  Demo1Lambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: demo_lambda.lambda_handler
+      Runtime: python3.8
+      CodeUrl: ./lambdas
+      Description: demo1 lambda
+      MemorySize: 128
+      Timeout: 30
+      Role: 'arn:aws:iam::862796510298:role/DemoLambdaRole'
+      Environment:
+        Variables:
+          TEST: test-evar-1
