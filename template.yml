@@ -35,13 +35,9 @@ Resources:
   DemoStepFunction:
       Type: AWS::Serverless::StateMachine
       Properties:
-        DefinitionUri: stepfunctions/demo_step_1.json
+        DefinitionUri: ./stepfunctions/demo_step_1.json
         Name: DemoDeployStepFunction
+        Role: 'arn:aws:iam::862796510298:role/DemoStepFunctionRole'
         DefinitionSubstitutions:
           Demo1LambdaArn: !GetAtt Demo1Lambda.Arn
           Demo2LambdaArn: !GetAtt Demo2Lambda.Arn
-        Policies:
-          - LambdaInvokePolicy:
-              FunctionName: !Ref Demo1Lambda
-          - LambdaInvokePolicy:
-              FunctionName: !Ref Demo2Lambda
