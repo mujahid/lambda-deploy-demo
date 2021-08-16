@@ -12,6 +12,22 @@ Resources:
       MemorySize: 128
       Timeout: 30
       Role: 'arn:aws:iam::862796510298:role/DemoLambdaRole'
+      FunctionName: demo_lambda
       Environment:
         Variables:
           TEST: test-evar-1
+
+  Demo2Lambda:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: demo2_lambda.lambda_handler
+        Runtime: python3.8
+        CodeUri: ./lambdas
+        Description: demo2 lambda
+        MemorySize: 128
+        Timeout: 30
+        Role: 'arn:aws:iam::862796510298:role/DemoLambdaRole'
+        FunctionName: demo_lambda2
+        Environment:
+          Variables:
+            TEST: test-evar-1
