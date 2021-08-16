@@ -39,5 +39,5 @@ Resources:
         Role: 'arn:aws:iam::862796510298:role/DemoStepFunctionRole'
         Name: DemoDeployStepFunction
         DefinitionSubstitutions:
-          Demo1LambdaArn: !GetAtt Demo1Lambda.arn
-          Demo2LambdaArn: !GetAtt Demo2Lambda.arn
+          Demo1LambdaArn: !GetAtt Demo1Lambda.Arn
+          Demo2LambdaArn: !GetAtt Demo2Lambda.Arn
