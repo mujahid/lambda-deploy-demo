@@ -31,3 +31,13 @@ Resources:
         Environment:
           Variables:
             TEST: test-evar-1
+
+  DemoStepFunction:
+      Type: AWS::StepFunctions::StateMachine
+      Properties:
+        DefinitionUri: ./stepfunctions/demo_step_1.json
+        Role: 'arn:aws:iam::862796510298:role/DemoStepFunctionRole'
+        Name: DemoDeployStepFunction
+        DefinitionSubstitutions:
+          Demo1LambdaArn: !GetAtt Demo1Lambda.arn
+          Demo2LambdaArn: !GetAtt Demo2Lambda.arn
