@@ -4,10 +4,8 @@
   "States": {
     "Demo1Lambda": {
       "Type": "Task",
-      "Resource": "arn:aws:states:::lambda:invoke",
-      "OutputPath": "$.Payload",
+      "Resource": "${Demo1LambdaArn}",
       "Parameters": {
-        "FunctionName": "${Demo1LambdaArn}",
         "Payload": {
           "Test1": "Test",
           "Test2": "Test1"
@@ -25,14 +23,12 @@
           "BackoffRate": 2
         }
       ],
-      "Next": "Lambda Invoke"
+      "Next": "Demo2Lambda"
     },
-    "Lambda Invoke": {
+    "Demo2Lambda": {
       "Type": "Task",
-      "Resource": "arn:aws:states:::lambda:invoke",
-      "OutputPath": "$.Payload",
+      "Resource": "${Demo2LambdaArn}",
       "Parameters": {
-        "FunctionName": "${Demo2LambdaArn}",
         "Payload": {
           "key1": "sampleValue1"
         }
