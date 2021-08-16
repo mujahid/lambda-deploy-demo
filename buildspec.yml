@@ -2,7 +2,7 @@ version: 0.1
 phases:
   install:
     commands:
-      - aws cloudformation package --template-file template.yml --s3-bucket pipeline-demo-test1 --output-template-file outputtemplate.yml
+      - sam package --template-file template.yml --s3-bucket pipeline-demo-test1 --output-template-file outputtemplate.yml
 artifacts:
   type: zip
   files:
