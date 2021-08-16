@@ -7,7 +7,7 @@
       "Resource": "arn:aws:states:::lambda:invoke",
       "OutputPath": "$.Payload",
       "Parameters": {
-        "FunctionName": "${Demo1LambdaArn}:$LATEST",
+        "FunctionName": "${Demo1LambdaArn}",
         "Payload": {
           "Test1": "Test",
           "Test2": "Test1"
@@ -32,7 +32,7 @@
       "Resource": "arn:aws:states:::lambda:invoke",
       "OutputPath": "$.Payload",
       "Parameters": {
-        "FunctionName": "${Demo2LambdaArn}:$LATEST",
+        "FunctionName": "${Demo2LambdaArn}",
         "Payload": {
           "key1": "sampleValue1"
         }
