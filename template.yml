@@ -7,7 +7,7 @@ Resources:
     Properties:
       Handler: demo_lambda.lambda_handler
       Runtime: python3.8
-      CodeUri: ./lambdas
+      CodeUri: ./lambdas/lambda1
       Description: demo1 lambda
       MemorySize: 128
       Timeout: 30
@@ -22,7 +22,7 @@ Resources:
       Properties:
         Handler: demo2_lambda.lambda_handler
         Runtime: python3.8
-        CodeUri: ./lambdas
+        CodeUri: ./lambdas/lambda2
         Description: demo2 lambda
         MemorySize: 128
         Timeout: 30
